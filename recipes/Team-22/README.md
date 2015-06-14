@@ -1,13 +1,12 @@
 #Crime rate analysis across United States
 
 ##Data Science question: 1. Which state is currently having highest crime rate and which is safe to live in with lowest crime rate ?
-    2.  Predicting which state will have highest and lowest crime rate in nearby future ?
+    ##2.  Predicting which state will have highest and lowest crime rate in nearby future ?
 
 ###**Problem:** Scrap web site for acquiring the data and storing the data in MongoDB.
 
 ###**Solution:**
-
-"""
+```
 from lxml import html
 import requests
 import re
@@ -54,14 +53,14 @@ for s in range(len(states)):
                     "Vehicle_Theft": re.sub("[^0-9]", "",var[11].strip())})  
 print "DATA DUMP1 SUCCESS"
 
-"""
+```
 
 ###**Problem:** Retrieving the data from the database and analysing the data using pymongo , statistics library. Analysing the data.
 
 
 ###**Solution:**
 
-'''
+```
 import csv  
 import pymongo  
 import statistics  
@@ -147,4 +146,4 @@ with open('data.json', 'w') as outfile:
     print data1  
     json.dump(data1, outfile)  
     print "JSON CREATED"
-'''
+```
