@@ -21,7 +21,6 @@ states=['ca','ky','ma','md','me','mi','mn','oh','or','pa','ri','sc','sd','tn','t
 for s in range(len(states)):
     print states[s]
     link1="http://www.disastercenter.com/crime/"+states[s]+"crime.htm"
-
     startTime = time.time()
     page = requests.get("http://www.disastercenter.com/crime/uscrime.htm")
 
@@ -52,21 +51,23 @@ for s in range(len(states)):
                     "Aggravated_Assault": re.sub("[^0-9]", "",var[8].strip()),
                     "Burglary": re.sub("[^0-9]", "",var[9].strip()),
                     "Larceny_Theft": re.sub("[^0-9]", "",var[10].strip()),
-                    "Vehicle_Theft": re.sub("[^0-9]", "",var[11].strip())})
+                    "Vehicle_Theft": re.sub("[^0-9]", "",var[11].strip())})  
 print "DATA DUMP1 SUCCESS"
+
 '''
 
 ###**Problem:** Retrieving the data from the database and analysing the data using pymongo , statistics library. Analysing the data.
 
 
 ###**Solution:**
+
 '''
-import csv
-import pymongo
-import statistics
-import operator
-import json
-from pprint import pprint
+import csv  
+import pymongo  
+import statistics  
+import operator  
+import json  
+from pprint import pprint  
 from pymongo import MongoClient
 connection = MongoClient()
 db=connection.crime
