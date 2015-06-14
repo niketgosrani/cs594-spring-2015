@@ -53,7 +53,6 @@ for s in range(len(states)):
                     "Burglary": re.sub("[^0-9]", "",var[9].strip()),
                     "Larceny_Theft": re.sub("[^0-9]", "",var[10].strip()),
                     "Vehicle_Theft": re.sub("[^0-9]", "",var[11].strip())})
-
 print "DATA DUMP1 SUCCESS"
 '''
 
@@ -73,8 +72,6 @@ connection = MongoClient()
 db=connection.crime
 collection=db.crimestats
 
-
-
 item=collection.find()
 violent=[]
 prop=[]
@@ -83,8 +80,8 @@ pop=[]
 Percent={}
 data1={}
 
-#[ak,al,ar,az,co,ct,de,fl,ga,hi,ia,,id,il,in,kn,la,mo,ms,mt,nc,nd,ne,nh,nj,nm,ny]
-#print db.crimestats.find()
+[ak,al,ar,az,co,ct,de,fl,ga,hi,ia,,id,il,in,kn,la,mo,ms,mt,nc,nd,ne,nh,nj,nm,ny]
+print db.crimestats.find()
 states=['ca','ky','ma','md','me','mi','mn','oh','or','pa','ri','sc','sd','tn','tx','ut','va','vt','dc','wa','wi','wv','wy','nv','ak','al','ar','az','co','ct','de','fl','ga','hi','ia','id','il','in','kn','la','mo','ms','mt','nc','nd','ne','nh','nj','nm','ny']
 with open('data1.csv', 'w') as csvfile:
     fieldnames = ['State','Violent', 'Property','Total','Population']
@@ -112,7 +109,7 @@ with open('data1.csv', 'w') as csvfile:
              total.append(total2) 
 
 
-    #print "RES=",statistics.mean(res)
+        print "RES=",statistics.mean(res)
         percent=statistics.mean(total)/statistics.mean(pop)*100
         data1[j]={"State":states[s],"Violence":statistics.mean(violent),"Property":statistics.mean(prop),"Percent":percent}     
         Percentage=(statistics.mean(total)/statistics.mean(pop))*100
@@ -133,12 +130,12 @@ with open('data1.csv', 'w') as csvfile:
         writer.writerow({'State':states[s],'Violent': statistics.mean(violent), 'Property': statistics.mean(prop), 'Total': statistics.mean(total), 'Population': statistics.mean(pop)})
         percent=statistics.mean(total)/statistics.mean(pop)*100
         data1[j]={"State":states[s],"Violence":statistics.mean(violent),"Property":statistics.mean(prop),"Percent":percent}
-#print Percent
-#print "sorted=",sorted(Percent.iteritems(),key=operator.itemgetter(1))
+print Percent
+print "sorted=",sorted(Percent.iteritems(),key=operator.itemgetter(1))
 gg=sorted(Percent.iteritems(),key=operator.itemgetter(1))
-#it = iter(sorted(Percent.iteritems()))
-#print it.next()
-#gg=sorted(Percent.values())
+it = iter(sorted(Percent.iteritems()))
+print it.next()
+gg=sorted(Percent.values())
 j=1
 for k in range(len(gg)):
     
