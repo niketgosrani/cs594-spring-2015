@@ -91,7 +91,7 @@ with open('data1.csv', 'w') as csvfile:
     for s in range(len(states)):
         j=states.index(states[s])
         for doc in collection.find({"State":states[s]}):
-            #print doc['Murder']
+            print doc['Murder']
             violent1=str(doc['Violent']).strip()
             prop1=str(doc['Property']).strip()
             pop1=str(doc['Population']).strip()
@@ -107,12 +107,10 @@ with open('data1.csv', 'w') as csvfile:
              pop.append(pop2)         
             if(total1!=''):
              total2=int(total1)    
-             total.append(total2) 
-
-
+             total.append(total2)
         print "RES=",statistics.mean(res)
         percent=statistics.mean(total)/statistics.mean(pop)*100
-        data1[j]={"State":states[s],"Violence":statistics.mean(violent),"Property":statistics.mean(prop),"Percent":percent}     
+        data1[j]={"State":states[s],"Violence":statistics.mean(violent),"Property":statistics.mean(prop),"Percent":percent}
         Percentage=(statistics.mean(total)/statistics.mean(pop))*100
         Percent[states[s]]=Percentage
         print states[s],"Population MEAN=",statistics.mean(pop)
@@ -142,13 +140,11 @@ for k in range(len(gg)):
     
     print "****=========================*****"
     print gg[k]
-    
-
 print "state with highest crimerate(Not SAFE)==>",max(Percent.iteritems(), key=operator.itemgetter(1))[0],"=" ,max(Percent.iteritems(),key=operator.itemgetter(1))[1]
 print "state with lowest crimerate(SAFE)==>",min(Percent.iteritems(), key=operator.itemgetter(1))[0],"=" ,min(Percent.iteritems(), key=operator.itemgetter(1))[1]
 with open('data.json', 'w') as outfile:
-    data2="data=",data1
-    print data1
-    json.dump(data1, outfile)
+    data2="data=",data1  
+    print data1  
+    json.dump(data1, outfile)  
     print "JSON CREATED"
 '''
