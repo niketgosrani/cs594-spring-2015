@@ -1,7 +1,6 @@
 #Crime rate analysis across United States
 
-##Data Science question: 1. Which state is currently having highest crime rate and which is safe to live in with lowest crime rate ?
-    ##2.  Predicting which state will have highest and lowest crime rate in nearby future ?
+##Data Science question: 1. Which state is currently having highest crime rate and which is safe to live in with lowest crime rate ? 2.  Predicting which state will have highest and lowest crime rate in nearby future ?
 
 ###**Problem:** Scrap web site for acquiring the data and storing the data in MongoDB.
 
