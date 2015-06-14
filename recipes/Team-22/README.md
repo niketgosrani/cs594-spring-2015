@@ -7,7 +7,7 @@
 
 ###**Solution:**
 
-'''
+"""
 from lxml import html
 import requests
 import re
@@ -54,7 +54,7 @@ for s in range(len(states)):
                     "Vehicle_Theft": re.sub("[^0-9]", "",var[11].strip())})  
 print "DATA DUMP1 SUCCESS"
 
-'''
+"""
 
 ###**Problem:** Retrieving the data from the database and analysing the data using pymongo , statistics library. Analysing the data.
 
