@@ -2,9 +2,9 @@
 
 ##Data Science question: 1. Which state is currently having highest crime rate and which is safe to live in with lowest crime rate ? 2.  Predicting which state will have highest and lowest crime rate in nearby future ?
 
-###**Problem:** Scrap web site for acquiring the data and storing the data in MongoDB.
+###Problem: Scrap web site for acquiring the data and storing the data in MongoDB.
 
-###**Solution:**
+###Solution:
 ```
 from lxml import html
 import requests
@@ -54,10 +54,10 @@ print "DATA DUMP1 SUCCESS"
 
 ```
 
-###**Problem:** Retrieving the data from the database and analysing the data using pymongo , statistics library. Analysing the data.
+###Problem: Retrieving the data from the database and analysing the data using pymongo , statistics library. Analysing the data.
 
 
-###**Solution:**
+###Solution:
 
 ```
 import csv  
